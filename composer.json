@@ -1,5 +1,5 @@
 {
-    "name": "israel-nogueira/galaxy-db",
+    "name": "mvclaudianobj/galaxy-db",
     "description": "ORM simples para PHP e Base de Dados",
     "keywords": [ "ORM", "mariadb", "mysql","pgsql","sqlite","ibase","fbird","oracle","mssql","dblib","sqlsrv"], 
     "type": "library",
@@ -7,17 +7,17 @@
     "keywords": [],
     "authors": [
         {
-            "name": "Israel Nogueira",
-            "email": "israel@feats.com.br"
+            "name": "Marcos Claudiano",
+            "email": "marcos@fenixsol.com.br"
         }
     ],
     "scripts": {
-        "galaxy": "php vendor/israel-nogueira/galaxy-db/src/galaxy"
+        "galaxy": "php vendor/mvclaudianobj/galaxy-db/src/galaxy"
     },
     "autoload": {
         "psr-4": {
-            "IsraelNogueira\\galaxyDB\\": "src/",
-            "IsraelNogueira\\Models\\": "app/Models/"
+            "MarcosClaudiano\\galaxyDB\\": "src/",
+            "MarcosClaudiano\\Models\\": "app/Models/"
         }
     },
     "require": {
