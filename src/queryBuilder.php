@@ -1,5 +1,5 @@
 <?
-    namespace IsraelNogueira\galaxyDB;
+    namespace MarcosClaudiano\galaxyDB;
 	use PDO;
 	use RuntimeException;
 	use Exception;

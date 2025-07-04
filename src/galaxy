@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 include(__DIR__.'/../../../autoload.php');
-use IsraelNogueira\galaxyDB\galaxyDB;
+use MarcosClaudiano\galaxyDB\galaxyDB;
 
 /**
  * -------------------------------------------------------------------------
@@ -78,8 +78,8 @@ class cli{
 
 	static public function modeloModel($modelo='myClass') {
 		return '<?
-			namespace IsraelNogueira\Models;
-			use IsraelNogueira\galaxyDB\galaxyDB;
+			namespace MarcosClaudiano\Models;
+			use MarcosClaudiano\galaxyDB\galaxyDB;
 
 			class '.$modelo.' extends galaxyDB{
 				protected $customConnectData	= [
@@ -233,7 +233,7 @@ class cli{
 		}
 
 		$_COMPOSER	= json_decode(file_get_contents($JSON),true);
-		$PSR4		= (isset($_COMPOSER['autoload']['psr-4']['IsraelNogueira\Models\\']))?$_COMPOSER['autoload']['psr-4']['IsraelNogueira\Models\\']:'app/Models';
+		$PSR4		= (isset($_COMPOSER['autoload']['psr-4']['MarcosClaudiano\Models\\']))?$_COMPOSER['autoload']['psr-4']['MarcosClaudiano\Models\\']:'app/Models';
 		if(!file_exists($PATH.DIRECTORY_SEPARATOR.$PSR4)){
 			@mkdir($PATH.DIRECTORY_SEPARATOR.$PSR4,0777,true);
 			echo self::color('verde','Path PSR-4 criado').PHP_EOL;
@@ -242,10 +242,10 @@ class cli{
 		if(
 			empty($_COMPOSER['autoload']) || 
 			empty($_COMPOSER['autoload']['psr-4']) ||
-			empty($_COMPOSER['autoload']['psr-4']['IsraelNogueira\Models\\'])
+			empty($_COMPOSER['autoload']['psr-4']['MarcosClaudiano\Models\\'])
 		){
 				echo self::color('cinza','Adicionando path Models').PHP_EOL;
-				$_COMPOSER['autoload']['psr-4']["IsraelNogueira\\Models\\"] = 'app/Models/';
+				$_COMPOSER['autoload']['psr-4']["MarcosClaudiano\\Models\\"] = 'app/Models/';
 				file_put_contents($JSON, json_encode($_COMPOSER,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
 				echo self::color('verde','composer.json atualizado').PHP_EOL;
 		}
@@ -309,7 +309,7 @@ class cli{
 		if($_PARAMS[0]=='new-model'){
 			unset($_PARAMS[0]);	
 			foreach ($_PARAMS as $value) {
-				$Classe = $PATH.DIRECTORY_SEPARATOR.$_COMPOSER['autoload']['psr-4']["IsraelNogueira\\Models\\"].DIRECTORY_SEPARATOR.self::formatarString($value).'.php';
+				$Classe = $PATH.DIRECTORY_SEPARATOR.$_COMPOSER['autoload']['psr-4']["MarcosClaudiano\\Models\\"].DIRECTORY_SEPARATOR.self::formatarString($value).'.php';
 				file_put_contents($Classe, self::modeloModel($value));
 				echo self::color('amarelo','Criando model "'.$value.'"').PHP_EOL;
 			}

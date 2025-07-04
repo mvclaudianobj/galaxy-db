@@ -1,6 +1,6 @@
 <?php
     declare(strict_types = 1);
-    namespace IsraelNogueira\galaxyDB;
+    namespace MarcosClaudiano\galaxyDB;
 	use RuntimeException;
 	use Exception;
 	/*

@@ -1,10 +1,10 @@
 <?php
 
-	namespace IsraelNogueira\galaxyDB;
-	use IsraelNogueira\galaxyDB\connection;
-	use IsraelNogueira\galaxyDB\queryBuilder;
-	use IsraelNogueira\galaxyDB\actions;
-	use IsraelNogueira\galaxyDB\log;
+	namespace MarcosClaudiano\galaxyDB;
+	use MarcosClaudiano\galaxyDB\connection;
+	use MarcosClaudiano\galaxyDB\queryBuilder;
+	use MarcosClaudiano\galaxyDB\actions;
+	use MarcosClaudiano\galaxyDB\log;
 	use RuntimeException;
 	use ReflectionClass;
 
